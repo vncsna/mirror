@@ -1,0 +1,5 @@
+pytest==6.1.1
+uvicorn==0.13.3
+fastapi==0.63.0
+python-dotenv==0.15.0
+python-multipart==0.0.5
