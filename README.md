@@ -14,3 +14,7 @@ minor API experiment for data anonymization, providing blurring (pixelating) fac
 - `docker build -t mirror .`
 - `docker run -d --name wonderland -p 80:80 mirror`
 - open `localhost/docs`
+
+## screenshot
+
+<img src="openAPI.png" width=42%>
