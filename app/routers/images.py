@@ -1,5 +1,3 @@
-# TODO: Add faces recognition support
-
 import os
 import shutil
 from uuid import uuid4
@@ -18,33 +16,33 @@ router = APIRouter(tags=['Image'])
 
 @router.post('/image')
 def create_image(image: UploadFile = File(...)):
-  id = uuid4()
-  with open(f'database/{id}.png', 'wb') as buffer:
-    shutil.copyfileobj(image.file, buffer)
-  return {'id': image_id}
+    id = uuid4()
+    with open(f'database/{id}.png', 'wb') as buffer:
+        shutil.copyfileobj(image.file, buffer)
+    return {'id': image_id}
 
 @router.get('/image/{id}')
 def read_image(id: str):
-  return FileResponse(f'./database/{id}.png')
+    return FileResponse(f'./database/{id}.png')
 
 @router.put('/image/{id}')
 def update_image(id: str):
-  pass
+    pass
 
 @router.delete('/image/{id}')
 def delete_image(id: str):
-  imagepath = Path(f'./database/{id}.png')
-  imagepath.unlink()
-  return {'id': id}
+    imagepath = Path(f'./database/{id}.png')
+    imagepath.unlink()
+    return {'id': id}
 
 # ---------------------------------------
 
 @router.get('/image/{id}/{method}')
 def transform_image(id: str, method:str):
-  pass
+    pass
 
 # ---------------------------------------
 
 @router.get('/images')
 def read_images():
-  pass
+    pass
