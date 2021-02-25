@@ -1,2 +1,0 @@
-def black(img):
-    return np.zeros_like(img)
