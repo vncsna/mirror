@@ -1,6 +1,6 @@
 ## mirror
 
-minor API experiment for data anonymization, providing blurring (pixelating) faces and name replacement.
+minor API experiment for data anonymization, providing blurring (pixelating) faces and name tagging.
 
 ## local usage
 

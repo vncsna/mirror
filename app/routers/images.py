@@ -10,9 +10,9 @@ load_dotenv()
 DATABASE_IMGE = os.environ['DATABASE_IMGE']
 DATABASE_TEXT = os.environ['DATABASE_TEXT']
 
-router = APIRouter(tags=['Image'])
-
 # ---------------------------------------
+
+router = APIRouter(tags=['Image'])
 
 @router.post('/image')
 def create_image(image: UploadFile = File(...)):
@@ -35,13 +35,9 @@ def delete_image(uuid: str):
     imagepath.unlink()
     return {'id': id}
 
-# ---------------------------------------
-
 @router.get('/image/{uuid}/{method}')
 def transform_image(uuid: str, method:str):
     pass
-
-# ---------------------------------------
 
 @router.get('/images')
 def read_images():

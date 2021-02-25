@@ -13,9 +13,9 @@ load_dotenv()
 DATABASE_IMGE = os.environ['DATABASE_IMGE']
 DATABASE_TEXT = os.environ['DATABASE_TEXT']
 
-router = APIRouter(tags=['Text'])
-
 # ---------------------------------------
+
+router = APIRouter(tags=['Text'])
 
 @router.post('/text')
 def create_text(corpus: str):
@@ -61,8 +61,6 @@ def delete_text(uuid: str):
         conn.commit()
     return {'uuid': uuid}
 
-# ---------------------------------------
-
 @router.get('/text/{uuid}/transform')
 def transform_text(uuid: str):
     with sqlite3.connect(DATABASE_TEXT) as conn:
@@ -75,8 +73,6 @@ def transform_text(uuid: str):
         conn.commit()
     anonymized_corpus = anonymize_proper_noun(corpus[0])
     return {'corpus': anonymized_corpus}
-
-# ---------------------------------------
 
 @router.get('/texts')
 def read_texts():
